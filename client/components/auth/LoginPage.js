@@ -9,7 +9,6 @@ import { Button, Input } from 'react-native-elements';
 function LoginPage(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      
       <View style={styles.loginForm}>
         <Text style={styles.logo}>iFriend</Text>
         <Input
@@ -23,21 +22,18 @@ function LoginPage(props) {
           title="Login"
           raised={true}
           buttonStyle={styles.loginBtn}
-          containerStyle={{borderRadius: 15, marginTop: 20}}
+          containerStyle={{ borderRadius: 15, marginTop: 20 }}
         />
-      </View>
-      
-      <View style={{flex: 2}}>
+        <Text style={{ fontWeight: 'bold', marginTop: 70, marginBottom: 10, fontSize: 18 }}>Register an account</Text>
         <Button
-          title="Sign Up"
+          title="Register"
           raised={true}
           onPress={() => props.navigation.navigate('Register')}
           buttonStyle={styles.signupBtn}
-          containerStyle={{borderRadius: 15}}
+          containerStyle={{ borderRadius: 15 }}
         />
-        <Text style={{fontSize: 18, marginTop: 15}}>Need help signing up?</Text>
+        <Text style={{ color: 'blue', fontSize: 18, marginTop: 50, }}>Need help signing up? (FAQ)</Text>
       </View>
-      
     </View>
   );
 };
@@ -48,19 +44,19 @@ const styles = StyleSheet.create({
     height: 62,
     width: 180,
     borderRadius: 15,
-    backgroundColor: '#96B9D0'
+    backgroundColor: '#2184C4'
   },
   loginBtn: {
     fontSize: 30,
     height: 62,
     width: 300,
     borderRadius: 15,
-    backgroundColor: '#96B9D0'
+    backgroundColor: '#2184C4'
   },
   logo: {
-    flex: 1,
+    margin: 20,
     fontSize: 70,
-    color: '#96B9D0'
+    color: '#2184C4'
   },
   loginForm: {
     flex: 3,
@@ -68,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 100,
-    marginTop: 100
+    marginTop: 50
   }
 });
 
