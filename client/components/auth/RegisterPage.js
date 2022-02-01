@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button, Input } from 'react-native-elements';
-import { firebase } from '../../src/firebase/config';
+import { firebase } from '../../src/firebase/firebaseConfig';
 
 // testing home screen component for navigation stack
 function RegisterPage(props) {
@@ -70,11 +70,11 @@ function RegisterPage(props) {
         />
         <Input
           placeholder="Email"
+          // onChangeText={(text) => setEmail(text)}
           value={email}
         />
         <Input
           placeholder="Username"
-          value={username}
         />
         <Input
           placeholder="Password"
@@ -91,7 +91,7 @@ function RegisterPage(props) {
           raised={true}
           buttonStyle={styles.signupBtn}
           containerStyle={{ borderRadius: 15, marginTop: 20 }}
-          onPress={submit()}
+          onPress={() => submit()}
         />
         <Text style={{ marginTop: 50, fontSize: 18 }}>Have an existing account?
           <Text style={{ color: 'blue' }} onPress={goToLogin()}> Sign in</Text>

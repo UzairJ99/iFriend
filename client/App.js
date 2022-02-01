@@ -29,20 +29,18 @@ export default function App() {
             name="UserInputsPage" 
             component={UserInputsPage}
             options={{ headerShown: false }}
-          >
-            {props => <UserInputsPage {...props} userData={user} />}
-          </Stack.Screen>
+          />
         ) : (
           <>
             <Stack.Screen 
               name="Login" 
               component={LoginPage}
-              options={{ headerShown: false }}
+              // options={{ headerShown: false }}
             />
             <Stack.Screen 
               name="Register" 
               component={RegisterPage} 
-              options={{ headerShown: false }}
+              // options={{ headerShown: false }}
             />
           </>
         )

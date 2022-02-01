@@ -1,24 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button, Input } from 'react-native-elements';
-import { firebase } from '../../firebase/config'
+import { firebase } from '../../src/firebase/firebaseConfig';
 
 function LoginPage(props) {
   // states for the page
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  /**
-   * Navigates the user to the registration page.
-   * @returns {void}
-   */
-  const onFooterLinkPress = () => {
-    navigation.navigate('Registration');
-  }
 
   /**
    * Function to log in the user when they click the login button.
@@ -58,6 +50,7 @@ function LoginPage(props) {
       <View style={styles.loginForm}>
         <Text style={styles.logo}>iFriend</Text>
         <Input
+          // onChangeText={(text) => setEmail(text)}
           placeholder="Email"
         />
         <Input
@@ -69,7 +62,7 @@ function LoginPage(props) {
           raised={true}
           buttonStyle={styles.loginBtn}
           containerStyle={{ borderRadius: 15, marginTop: 20 }}
-          onPress={onSubmit()}
+          onPress={() => onSubmit()}
         />
         <Text style={{ fontWeight: 'bold', marginTop: 70, marginBottom: 10, fontSize: 18 }}>Register an account</Text>
         <Button

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>477250442772-4kibu0hn9av2infr78ii9pmqa5c04tmc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.477250442772-4kibu0hn9av2infr78ii9pmqa5c04tmc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCEuM41Yi3ts0d1VGQoEPGSaxcnmicMO_8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>477250442772</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.reactnativefirebase</string>
+	<key>PROJECT_ID</key>
+	<string>ifriend-45f5e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ifriend-45f5e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:477250442772:ios:54d74df4499b2e60bdf901</string>
+</dict>
+</plist>
