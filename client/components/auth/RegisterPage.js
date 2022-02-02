@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -15,13 +15,6 @@ function RegisterPage(props) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  /**
-   * Navigates the user to the login page.
-   * @returns {void}
-   */
-  const goToLogin = () => {
-    props.navigation.goBack();
-  }
 
   /**
    * Function to register a user in Firebase. Checks if the information is valid and the passwords match.
@@ -49,7 +42,7 @@ function RegisterPage(props) {
           .set(data)
           .then(() => {
             // pass the user info to the next page
-            props.navigation.navigate('UserInputsPage', {user: data})
+            props.navigation.navigate('UserInputsPage', { user: data })
           })
           .catch((error) => {
             alert(error)
@@ -57,7 +50,7 @@ function RegisterPage(props) {
       })
       .catch((error) => {
         alert(error)
-    });
+      });
   }
 
   return (
@@ -94,7 +87,7 @@ function RegisterPage(props) {
           onPress={() => submit()}
         />
         <Text style={{ marginTop: 50, fontSize: 18 }}>Have an existing account?
-          <Text style={{ color: 'blue' }} onPress={goToLogin()}> Sign in</Text>
+          <Text style={{ color: 'blue' }} onPress={() => props.navigation.goBack()}> Sign in</Text>
         </Text>
       </View>
     </View>
