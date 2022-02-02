@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -34,7 +34,7 @@ function LoginPage(props) {
             }
             const user = firestoreDocument.data()
             // pass the user info to the next page
-            props.navigation.navigate('UserInputsPage', {user})
+            props.navigation.navigate('UserInputsPage', { user })
           })
           .catch(error => {
             alert(error)
@@ -50,10 +50,13 @@ function LoginPage(props) {
       <View style={styles.loginForm}>
         <Text style={styles.logo}>iFriend</Text>
         <Input
-          // onChangeText={(text) => setEmail(text)}
+          value={email}
+          onChangeText={setEmail}
           placeholder="Email"
         />
         <Input
+          value={password}
+          onChangeText={setPassword}
           placeholder="Password"
           secureTextEntry={true}
         />

@@ -12,6 +12,7 @@ function RegisterPage(props) {
   // states for the page
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -35,6 +36,8 @@ function RegisterPage(props) {
           id: uid,
           email,
           name,
+          username,
+          password
         };
         const usersRef = firebase.firestore().collection('users')
         usersRef
@@ -60,24 +63,29 @@ function RegisterPage(props) {
         <Input
           placeholder="Name"
           value={name}
+          onChangeText={setName}
         />
         <Input
           placeholder="Email"
-          // onChangeText={(text) => setEmail(text)}
           value={email}
+          onChangeText={setEmail}
         />
         <Input
           placeholder="Username"
+          value={username}
+          onChangeText={setUserName}
         />
         <Input
           placeholder="Password"
           secureTextEntry={true}
           value={password}
+          onChangeText={setPassword}
         />
         <Input
           placeholder="Confirm Password"
           secureTextEntry={true}
           value={confirmPassword}
+          onChangeText={setConfirmPassword}
         />
         <Button
           title="Sign Up"
