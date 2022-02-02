@@ -76,7 +76,7 @@ export default function App() {
           ) : (
             <Stack.Screen
               name="HomePage"
-            //options={{ headerShown: false }}
+              options={{ headerShown: false }}
             >{props => <HomePage {...props} userInfo={user} />}
             </Stack.Screen>
           )
