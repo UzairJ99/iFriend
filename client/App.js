@@ -80,8 +80,6 @@ export default function App() {
             >{props => <HomePage {...props} userInfo={user} />}
             </Stack.Screen>
           )
-
-
         }
       </Stack.Navigator>
     </NavigationContainer>
