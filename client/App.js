@@ -5,17 +5,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { firebase } from './src/firebase/firebaseConfig';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // auth components
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
 import UserInputsPage from './components/auth/UserInputsPage';
-
-// user experience components
-import ConnectionsPage from './components/user_experience/ConnectionsPage';
-import HomePage from './components/user_experience/HomePage';
-import InterestsPage from './components/user_experience/InterestsPage';
-import SettingsPage from './components/user_experience/SettingsPage';
+// user experience component
+import { Base } from './components/user_experience/Base';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +23,6 @@ export default function App() {
 
   // state for whether the page is loading or not
   const [loading, setLoading] = useState(null);
-  const data = { test: 1 }
 
   if (loading) {
     return (
@@ -75,9 +71,9 @@ export default function App() {
             </>
           ) : (
             <Stack.Screen
-              name="HomePage"
+              name="Base"
               options={{ headerShown: false }}
-            >{props => <HomePage {...props} userInfo={user} />}
+            >{props => <Base {...props} userInfo={user} />}
             </Stack.Screen>
           )
         }

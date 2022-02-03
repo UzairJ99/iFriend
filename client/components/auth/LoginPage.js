@@ -36,7 +36,7 @@ function LoginPage(props) {
             // pass the user info to the next page
             // since we are persisting the login details, there is probably no need for us to navigate to this page after the user logs in 
             // simply because the page would automatically get rendered after we actually successfully log in. 
-            props.navigation.navigate('HomePage', user)
+            props.navigation.navigate('Base', user)
           })
           .catch(error => {
             alert(error)
