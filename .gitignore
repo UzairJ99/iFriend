@@ -9,13 +9,13 @@ client/*.key
 client/*.mobileprovision
 client/*.orig.*
 client/web-build/
-client/package.json
 client/yarn.lock
 client/src/firebase/firebaseConfig.env
 
 api/node_modules
 api/.env
 
+node_modules
+
 # macOS
 .DS_Store
-node_modules
