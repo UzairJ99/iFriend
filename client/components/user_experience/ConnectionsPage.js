@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Tab, Text, TabView } from 'react-native-elements';
+import { Tab, TabView } from 'react-native-elements';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -17,40 +17,42 @@ const ConnectionsPage = (props) => {
         value={index}
         onChange={(e) => setIndex(e)}
         indicatorStyle={{
-          backgroundColor: 'white',
+          backgroundColor: '#96B9D0',
           height: 3,
         }}
         variant="primary"
+        containerStyle={{backgroundColor: 'white', marginTop: 10}}
       >
         <Tab.Item
-          title="Recent"
-          titleStyle={{ fontSize: 12 }}
-          icon={{ name: 'timer', type: 'ionicon', color: 'white' }}
+          title="Requests"
+          titleStyle={{ fontSize: 12, color: 'black' }}
+          icon={{ name: 'ios-people', type: 'ionicon', color: '#96B9D0' }}
+          containerStyle={{backgroundColor: 'white', height: 80, paddingTop: 10 }}
         />
         <Tab.Item
-          title="favorite"
-          titleStyle={{ fontSize: 12 }}
-          icon={{ name: 'heart', type: 'ionicon', color: 'white' }}
-        />
-        <Tab.Item
-          title="cart"
-          titleStyle={{ fontSize: 12 }}
-          icon={{ name: 'cart', type: 'ionicon', color: 'white' }}
+          title="iFriends"
+          titleStyle={{ fontSize: 12, color: 'black' }}
+          icon={{ name: 'list', type: 'ionicon', color: '#96B9D0' }}
+          containerStyle={{backgroundColor: 'white', height: 80, paddingTop: 10 }}
         />
       </Tab>
 
       <TabView value={index} onChange={setIndex} animationType="spring">
-        <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>
-          <Text h1>Recent</Text>
+        <TabView.Item style={{ backgroundColor: 'white', width: '100%' }}>
+          <Text h1>Requests</Text>
         </TabView.Item>
-        <TabView.Item style={{ backgroundColor: 'blue', width: '100%' }}>
-          <Text h1>Favorite</Text>
-        </TabView.Item>
-        <TabView.Item style={{ backgroundColor: 'green', width: '100%' }}>
-          <Text h1>Cart</Text>
+        <TabView.Item style={{ backgroundColor: 'white', width: '100%' }}>
+          <Text h1>iFriends</Text>
         </TabView.Item>
       </TabView>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  tab: {
+    backgroundColor: '#96B9D0'
+  },
+});
+
 export default ConnectionsPage;
