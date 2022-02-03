@@ -9,6 +9,9 @@ client/*.key
 client/*.mobileprovision
 client/*.orig.*
 client/web-build/
+client/package.json
+client/yarn.lock
+client/src/firebase/firebaseConfig.js
 
 api/node_modules
 api/.env
