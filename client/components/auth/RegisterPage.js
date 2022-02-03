@@ -108,12 +108,12 @@ const styles = StyleSheet.create({
     height: 62,
     width: 300,
     borderRadius: 15,
-    backgroundColor: '#2184C4'
+    backgroundColor: '#73B4DE'
   },
   logo: {
     fontSize: 30,
     marginBottom: 20,
-    color: '#2184C4'
+    color: '#73B4DE'
   },
   loginForm: {
     flex: 3,

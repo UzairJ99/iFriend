@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { Button, Input } from 'react-native-elements';
 import { firebase } from '../../src/firebase/firebaseConfig';
 
-function HomePage(props) {
+const HomePage = (props) => {
     return (
         <View
             style={{
@@ -15,6 +15,7 @@ function HomePage(props) {
                 justifyContent: "center",
                 alignItems: "center"
             }}>
+            <Text>HomePage</Text>
             <Text>Hello, {JSON.stringify(props.userInfo.username)}. Your email is, {JSON.stringify(props.userInfo.email)}</Text>
         </View>
     )

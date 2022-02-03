@@ -15,7 +15,8 @@ const InterestsPage = (props) => {
                 justifyContent: "center",
                 alignItems: "center"
             }}>
-            <Text>Hello</Text>
+            <Text>InterestsPage</Text>
+            <Text>Hello, {JSON.stringify(props.userInfo.username)}. Your email is, {JSON.stringify(props.userInfo.email)}</Text>
         </View>
     )
 }

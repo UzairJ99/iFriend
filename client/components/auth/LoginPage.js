@@ -89,19 +89,19 @@ const styles = StyleSheet.create({
     height: 62,
     width: 180,
     borderRadius: 15,
-    backgroundColor: '#2184C4'
+    backgroundColor: '#73B4DE'
   },
   loginBtn: {
     fontSize: 30,
     height: 62,
     width: 300,
     borderRadius: 15,
-    backgroundColor: '#2184C4'
+    backgroundColor: '#73B4DE'
   },
   logo: {
     margin: 20,
     fontSize: 70,
-    color: '#2184C4'
+    color: '#73B4DE'
   },
   loginForm: {
     flex: 3,

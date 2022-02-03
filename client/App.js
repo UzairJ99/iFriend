@@ -11,7 +11,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
 import UserInputsPage from './components/auth/UserInputsPage';
-
 // user experience components
 import ConnectionsPage from './components/user_experience/ConnectionsPage';
 import HomePage from './components/user_experience/HomePage';
@@ -22,19 +21,58 @@ const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function Base(props) {
-  // we need to temporarily store the user info, to prevent overriding the value i think 
-  // would not work if tried to access it by doing userInfo={props.userInfo}
+  // we need to temporarily store the user info, to prevent overriding the value
+  // it would not work if tried to access it by doing userInfo={props.userInfo}
+  // this might be because we enter the tab.navigator and react assumes we have entered another screen, so the props gets refreshed?? 
   const tempUserInfo = props.userInfo;
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={
+      ({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let icon;
+          if (route.name === 'Home') {
+            icon = focused ? 'ios-home' : 'ios-home-outline';
+          } else if (route.name === 'iFriends') {
+            icon = focused ? 'ios-people' : 'ios-people-outline';
+          } else if (route.name === 'Interests') {
+            icon = focused ? 'ios-add' : 'ios-add-outline';
+          }
+          return <Ionicons name={icon} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: '#73B4DE',
+        tabBarInactiveTintColor: 'gray',
+
+        // configure header 
+        headerStyle: {
+          backgroundColor: 'white',
+        },
+        headerTitleStyle: {
+          fontWeight: 'normal',
+          fontFamily: 'Helvetica-Light',
+          fontSize: 35,
+          color: 'black',
+          textAlign: 'justify'
+        },
+        headerTitleAlign: 'left',
+        headerStatusBarHeight: 70
+      })}>
       <Tab.Screen
-        name="HomePage"
-        options={{ headerShown: false }}
+        name="Home"
       >{props => <HomePage {...props} userInfo={tempUserInfo} />}
+      </Tab.Screen>
+      <Tab.Screen
+        name="iFriends"
+      >{props => <ConnectionsPage {...props} userInfo={tempUserInfo} />}
+      </Tab.Screen>
+      <Tab.Screen
+        name="Interests"
+        options={({ title: "Interests" })}
+      >{props => <InterestsPage {...props} userInfo={tempUserInfo} />}
       </Tab.Screen>
     </Tab.Navigator>
   );
 }
+
 export default function App() {
 
   // applicaton state to keep track of whether a user is signed in or not
