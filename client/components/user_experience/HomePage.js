@@ -8,9 +8,6 @@ import { Button, Input } from 'react-native-elements';
 import { firebase } from '../../src/firebase/firebaseConfig';
 
 function HomePage(props) {
-    console.log("HomePage")
-    console.log(props)
-
     return (
         <View
             style={{

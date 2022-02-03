@@ -11,11 +11,30 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
 import UserInputsPage from './components/auth/UserInputsPage';
-// user experience component
-import { Base } from './components/user_experience/Base';
 
+// user experience components
+import ConnectionsPage from './components/user_experience/ConnectionsPage';
+import HomePage from './components/user_experience/HomePage';
+import InterestsPage from './components/user_experience/InterestsPage';
+import SettingsPage from './components/user_experience/SettingsPage';
+
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+function Base(props) {
+  // we need to temporarily store the user info, to prevent overriding the value i think 
+  // would not work if tried to access it by doing userInfo={props.userInfo}
+  const tempUserInfo = props.userInfo;
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="HomePage"
+        options={{ headerShown: false }}
+      >{props => <HomePage {...props} userInfo={tempUserInfo} />}
+      </Tab.Screen>
+    </Tab.Navigator>
+  );
+}
 export default function App() {
 
   // applicaton state to keep track of whether a user is signed in or not
