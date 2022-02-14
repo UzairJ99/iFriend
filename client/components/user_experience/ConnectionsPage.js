@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button, Input } from 'react-native-elements';
 import { firebase } from '../../src/firebase/firebaseConfig';
+import FriendsList from './FriendsList';
+import RequestsList from './RequestsList';
 
 const ConnectionsPage = (props) => {
   const [index, setIndex] = React.useState(0);
@@ -39,10 +41,10 @@ const ConnectionsPage = (props) => {
 
       <TabView value={index} onChange={setIndex} animationType="spring">
         <TabView.Item style={{ backgroundColor: 'white', width: '100%' }}>
-          <Text h1>Requests</Text>
+          <RequestsList />
         </TabView.Item>
         <TabView.Item style={{ backgroundColor: 'white', width: '100%' }}>
-          <Text h1>iFriends</Text>
+          <FriendsList />
         </TabView.Item>
       </TabView>
     </>
