@@ -55,12 +55,14 @@ function LoginPage(props) {
           value={email}
           onChangeText={setEmail}
           placeholder="Email"
+          clearButtonMode='always'
         />
         <Input
           value={password}
           onChangeText={setPassword}
           placeholder="Password"
           secureTextEntry={true}
+          clearButtonMode='always'
         />
         <Button
           title="Login"

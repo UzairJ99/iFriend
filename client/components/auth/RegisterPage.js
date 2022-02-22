@@ -10,12 +10,13 @@ import { firebase } from '../../src/firebase/firebaseConfig';
 // testing home screen component for navigation stack
 function RegisterPage(props) {
   // states for the page
-  const [name, setName] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUserName] = useState('');
+  const [schoolname, setSchoolName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
 
   /**
    * Function to register a user in Firebase. Checks if the information is valid and the passwords match.
@@ -35,8 +36,10 @@ function RegisterPage(props) {
         const data = {
           id: uid,
           email,
-          name,
+          firstname,
+          lastname,
           username,
+          schoolname,
           password
         };
         const usersRef = firebase.firestore().collection('users')
@@ -61,28 +64,45 @@ function RegisterPage(props) {
       <View style={styles.loginForm}>
         <Text style={styles.logo}>Sign up for iFriend</Text>
         <Input
-          placeholder="Name"
-          value={name}
-          onChangeText={setName}
+          placeholder="Firstname"
+          clearButtonMode='always'
+          value={firstname}
+          onChangeText={setFirstName}
+        />
+        <Input
+          placeholder="Lastname"
+          clearButtonMode='always'
+          value={lastname}
+          onChangeText={setLastName}
         />
         <Input
           placeholder="Email"
+          clearButtonMode='always'
           value={email}
           onChangeText={setEmail}
         />
         <Input
           placeholder="Username"
+          clearButtonMode='always'
           value={username}
           onChangeText={setUserName}
         />
         <Input
+          placeholder="School"
+          clearButtonMode='always'
+          value={schoolname}
+          onChangeText={setSchoolName}
+        />
+        <Input
           placeholder="Password"
+          clearButtonMode='always'
           secureTextEntry={true}
           value={password}
           onChangeText={setPassword}
         />
         <Input
           placeholder="Confirm Password"
+          clearButtonMode='always'
           secureTextEntry={true}
           value={confirmPassword}
           onChangeText={setConfirmPassword}
