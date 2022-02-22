@@ -16,7 +16,7 @@ const SettingsPage = (props) => {
                 alignItems: "center"
             }}>
             <Text>SettingsPage</Text>
-            <Text>Hello, {JSON.stringify(props.userInfo.username)}. Your email is, {JSON.stringify(props.userInfo.email)}</Text>
+            <Text>Hello, {JSON.stringify(props)}. Your email is, {JSON.stringify(props)}</Text>
         </View>
     )
 }
