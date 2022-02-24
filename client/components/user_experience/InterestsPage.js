@@ -1,11 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, useCallback } from 'react';
-import { StyleSheet, Text, View, Alert } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Button, Input } from 'react-native-elements';
+import { StyleSheet, View, Alert } from 'react-native';
+import { Button } from 'react-native-elements';
 import { firebase } from '../../src/firebase/firebaseConfig';
 import DropDownPicker from 'react-native-dropdown-picker';
 
@@ -15,7 +10,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 // 3.) implement user prompts for clear all and save all - done 
 // 4.) update firebase after the clear all and save interests - done
 
-const InterestsPage = (props) => {
+const InterestsPage = (props) => { 
     // Favorite Musical Artist 
     const [musicOpen, musicSetOpen] = useState(false);
     const [musicValue, musicSetValue] = useState(null);
