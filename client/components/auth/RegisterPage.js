@@ -40,7 +40,15 @@ function RegisterPage(props) {
           lastname,
           username,
           schoolname,
-          password
+          password, 
+          favoriteartist: '', 
+          favoritemovie: '', 
+          favoritehobby: '', 
+          dreamdestination: '', 
+          futurecareerplans: '', 
+          zodiacsign: '', 
+          favoriteapp: '', 
+          favoritebook: ''
         };
         const usersRef = firebase.firestore().collection('users')
         usersRef

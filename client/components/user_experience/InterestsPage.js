@@ -13,7 +13,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 // 1.) get list of interest, each section should have an already predifined list - done 
 // 2.) implement minimal functionality for clear all and save all interests icon - done 
 // 3.) implement user prompts for clear all and save all - done 
-// 4.) update firebase after the clear all and save interests - WIP 
+// 4.) update firebase after the clear all and save interests - done
 
 const InterestsPage = (props) => {
     // Favorite Musical Artist 
@@ -232,6 +232,52 @@ const InterestsPage = (props) => {
         zodiacSetOpen(false);
     }, []);
 
+    // read from database 
+    useEffect(() => {
+        firebase.firestore().collection('users').doc(`${props.userInfo.id}`).get()
+        .then(documentSnapshot => {
+            // console.log('User exists: ', documentSnapshot.exists);
+            if (documentSnapshot.exists) {
+                const userData = documentSnapshot.data();
+                console.log('User data: ', userData);
+
+                // set the value of individual interests only if they were previously set 
+                if (userData.favoriteartist) {
+                    musicSetValue(userData.favoriteartist);
+                }
+                if (userData.favoritemovie) {
+                    movieSetValue(userData.favoritemovie)
+                }
+                if (userData.favoritehobby) {
+                    hobbySetValue(userData.favoritehobby);
+                }
+                if (userData.dreamdestination) {
+                    destinationSetValue(userData.dreamdestination);
+                }
+                if (userData.futurecareerplans) {
+                    careerSetValue(userData.futurecareerplans);
+                }
+                if (userData.zodiacsign) {
+                    zodiacSetValue(userData.zodiacsign);
+                }
+                if (userData.favoriteapp) {
+                    appSetValue(userData.favoriteapp);
+                }
+                if (userData.favoritebook) {
+                    bookSetValue(userData.favoritebook);
+                }
+            }
+            else { 
+                console.log('This user does not exist in the database');
+            }
+        }).catch((error) => {
+            console.log('There was an error while trying to read from the database');
+            return (
+                <>/</>
+            )
+        });
+    }, []);
+
     // set all selections back to the default value 
     const clearAllSelection = () => {
         appSetValue(null);
@@ -242,6 +288,20 @@ const InterestsPage = (props) => {
         movieSetValue(null);
         musicSetValue(null);
         zodiacSetValue(null);    
+
+        // clear all values from the DB 
+        firebase.firestore().collection('users').doc(`${props.userInfo.id}`).update({
+            favoriteartist: '', 
+            favoritemovie: '', 
+            favoritehobby: '', 
+            dreamdestination: '', 
+            futurecareerplans: '', 
+            zodiacsign: '', 
+            favoriteapp: '', 
+            favoritebook: ''
+        }).then(() => {
+            console.log(`cleared all interests for the user with email ${props.userInfo.email}`);
+        })
     };
 
     const clearAllBtnAlert = () =>
@@ -274,7 +334,20 @@ const InterestsPage = (props) => {
             },
             { 
                 text: "OK", 
-                onPress: () => {}, 
+                onPress: () => {
+                    firebase.firestore().collection('users').doc(`${props.userInfo.id}`).update({
+                        favoriteartist: musicValue, 
+                        favoritemovie: movieValue, 
+                        favoritehobby: hobbyValue, 
+                        dreamdestination: destinationValue, 
+                        futurecareerplans: careerValue, 
+                        zodiacsign: zodiacValue, 
+                        favoriteapp: appValue, 
+                        favoritebook: bookValue
+                    }).then(() => {
+                        console.log(`saved all interests for the user with email ${props.userInfo.email}`);
+                    });
+                }, 
                 style: "destructive"
             }
         ]
