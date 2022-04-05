@@ -42,9 +42,8 @@ const HomePage = (props) => {
                         <Text style={{fontSize: 17, marginTop: 5, textAlign: 'center'}}>Contact iFriend Support</Text>
                         <Button
                             title="Get Started"
-                            raised={true}
                             buttonStyle={styles.loginBtn}
-                            containerStyle={{ borderRadius: 15, width: 100, textAlign: 'center'}}
+                            containerStyle={{position: 'relative', alignItems: 'center', borderRadius: 15, textAlign: 'center'}}
                         />
                     </Card>
                 </View>
@@ -66,7 +65,11 @@ const styles = StyleSheet.create({
         height: 42,
         borderRadius: 15,
         width: 200,
-        backgroundColor: '#73B4DE'
+        backgroundColor: '#73B4DE', 
+        justifyContent: 'center',
+        alignItems: 'center', 
+        position: 'relative',
+
     }
 });
 
