@@ -15,19 +15,21 @@ const InterestsPage = (props) => {
     const [musicOpen, musicSetOpen] = useState(false);
     const [musicValue, musicSetValue] = useState(null);
     const [musicItems, musicSetItems] = useState([
-        {label: 'Frank Ocean', value: 'frank'},
-        {label: 'Summer Walker', value: 'summer'},
-        {label: 'Rihanna', value: 'rihanna'},
-        {label: 'Beyonce', value: 'beyonce'},
-        {label: 'J Cole', value: 'jcole'},
-        {label: 'Young Thug', value: 'youngthug'},
-        {label: 'Drake', value: 'drake'},
-        {label: 'Nicki Minaj', value: 'nickiminaj'},
-        {label: 'Kendrick Lamar', value: 'kendrick'},
-        {label: 'Mereba', value: 'mereba'},
-        {label: 'JID', value: 'jid'},
-        {label: 'Ari Lennox', value: 'arilennox'},
-        {label: 'Earth Gang', value: 'earthgang'}
+        {label: 'Frank Ocean', value: '00'},
+        {label: 'Summer Walker', value: '01'},
+        {label: 'Rihanna', value: '02'},
+        {label: 'Beyonce', value: '03'},
+        {label: 'J Cole', value: '04'},
+        {label: 'Young Thug', value: '05'},
+        {label: 'Drake', value: '06'},
+        {label: 'Nicki Minaj', value: '07'},
+        {label: 'Mereba', value: '08'},
+        {label: 'JID', value: '09'},
+        {label: 'The Weeknd', value: '10'},
+        {label: 'Ariana Grande', value: '11'},
+        {label: 'Taylor Swift', value: '12'},
+        {label: 'Doja Cat', value: '13'},
+        {label: 'EARTHGANG', value: '14'},
       ]); 
     const onMusicOpen = useCallback(() => {
         appSetOpen(false);
@@ -43,19 +45,21 @@ const InterestsPage = (props) => {
     const [movieOpen, movieSetOpen] = useState(false);
     const [movieValue, movieSetValue] = useState(null);
     const [movieItems, movieSetItems] = useState([
-        {label: 'Interstellar', value: 'interstellar'},
-        {label: 'Haunting of Hill House', value: 'haunting'},
-        {label: 'Moonlight', value: 'moonlight'},
-        {label: 'Get Out', value: 'getout'},
-        {label: 'You', value: 'you'},
-        {label: 'Ozark', value: 'ozark'},
-        {label: 'Parasite', value: 'parasite'},
-        {label: 'Euphoria', value: 'euphoria'},
-        {label: 'Pretty Woman', value: 'prettywoman'},
-        {label: 'Her', value: 'her'},
-        {label: 'Manchester by the Sea', value: 'manchester'},
-        {label: 'Django Unchained', value: 'django'},
-        {label: 'Dallas Buyers Club', value: 'dallas'}
+        {label: 'Interstellar', value: '00'},
+        {label: '500 Days of Summer', value: '01'},
+        {label: 'Moonlight', value: '02'},
+        {label: 'Get Out', value: '03'},
+        {label: 'You', value: '04'},
+        {label: 'Ozark', value: '05'},
+        {label: 'Parasite', value: '06'},
+        {label: 'Euphoria', value: '07'},
+        {label: 'Manchester by the Sea', value: '08'},
+        {label: 'Dallas Buyers Club', value: '09'},
+        {label: 'Eternal Sunshine of the Spotless Mind', value: '10'},
+        {label: 'HER', value: '11'},
+        {label: 'Fleabag', value: '12'},
+        {label: 'Avatar', value: '13'},
+        {label: 'How I Met Your Mother', value: '14'},
       ]); 
     const onMovieOpen = useCallback(() => {
         appSetOpen(false);
@@ -71,18 +75,21 @@ const InterestsPage = (props) => {
     const [hobbyOpen, hobbySetOpen] = useState(false);
     const [hobbyValue, hobbySetValue] = useState(null);
     const [hobbyItems, hobbySetItems] = useState([
-        {label: 'Reading', value: 'reading'},
-        {label: 'Painting', value: 'painting'},
-        {label: 'Photography', value: 'photography'},
-        {label: 'Dancing', value: 'dancing'},
-        {label: 'Pottery', value: 'pottery'},
-        {label: 'Cooking', value: 'cooking'},
-        {label: 'Gaming', value: 'gaming'},
-        {label: 'Singing', value: 'singing'},
-        {label: 'Acting', value: 'acting'},
-        {label: 'Hiking', value: 'hiking'},
-        {label: 'Wine Tasting', value: 'winetasting'},
-        {label: 'Blogging', value: 'blogging'}
+        {label: 'Reading', value: '00'},
+        {label: 'Painting', value: '01'},
+        {label: 'Photography', value: '02'},
+        {label: 'Dancing', value: '03'},
+        {label: 'Pottery', value: '04'},
+        {label: 'Cooking', value: '05'},
+        {label: 'Gaming', value: '06'},
+        {label: 'Singing', value: '07'},
+        {label: 'Acting', value: '08'},
+        {label: 'Hiking', value: '09'},
+        {label: 'Gardening', value: '10'},
+        {label: 'Drawing', value: '11'},
+        {label: 'Learning New Things', value: '12'},
+        {label: 'Playing Sports', value: '13'},
+        {label: 'Doing Nothing!', value: '14'},
       ]); 
     const onHobbyOpen = useCallback(() => {
         appSetOpen(false);
@@ -98,18 +105,21 @@ const InterestsPage = (props) => {
     const [destinationOpen, destinationSetOpen] = useState(false);
     const [destinationValue, destinationSetValue] = useState(null);
     const [destinationItems, destinationSetItems] = useState([
-        {label: 'Nigeria', value: 'nigeria'},
-        {label: 'Ghana', value: 'ghana'},
-        {label: 'Tanzania', value: 'tanzania'},
-        {label: 'Kenya', value: 'kenya'},
-        {label: 'St. Lucia', value: 'stlucia'},
-        {label: 'Jamaica', value: 'jamaica'},
-        {label: 'Costa Rica', value: 'costarica'},
-        {label: 'Canada', value: 'canada'},
-        {label: 'France', value: 'france'},
-        {label: 'Spain', value: 'spain'},
-        {label: 'Italy', value: 'italy'},
-        {label: 'Morocco', value: 'morocco'}
+        {label: 'Nigeria', value: '00'},
+        {label: 'Ghana', value: '01'},
+        {label: 'Tanzania', value: '02'},
+        {label: 'Kenya', value: '03'},
+        {label: 'St. Lucia', value: '04'},
+        {label: 'Jamaica', value: '05'},
+        {label: 'Costa Rica', value: '06'},
+        {label: 'France', value: '07'},
+        {label: 'Spain', value: '08'},
+        {label: 'Italy', value: '09'},
+        {label: 'Dubai', value: '10'},
+        {label: 'Mexico', value: '11'},
+        {label: 'Morocco', value: '12'},
+        {label: 'Egypt', value: '13'},
+        {label: 'Greece', value: '14'},
       ]); 
     const onDestinationOpen = useCallback(() => {
         appSetOpen(false);
@@ -125,18 +135,21 @@ const InterestsPage = (props) => {
     const [careerOpen, careerSetOpen] = useState(false);
     const [careerValue, careerSetValue] = useState(null);
     const [careerItems, careerSetItems] = useState([
-        {label: 'Engineer', value: 'engineer'},
-        {label: 'Nurse', value: 'nurse'},
-        {label: 'Pharmacist', value: 'pharmacist'},
-        {label: 'Doctor', value: 'doctor'},
-        {label: 'Surgeon', value: 'surgeon'},
-        {label: 'Librarian', value: 'librarian'},
-        {label: 'Human Resource representative', value: 'humanresource'},
-        {label: 'Epidemiologist', value: 'epidemiologist'},
-        {label: 'Electrician', value: 'electrician'},
-        {label: 'Professor/ Teacher', value: 'teacher'},
-        {label: 'Dentist', value: 'dentist'},
-        {label: 'Veterinarian', value: 'veterinarian'}
+        {label: 'Engineer', value: '00'},
+        {label: 'Nurse', value: '01'},
+        {label: 'Pharmacist', value: '02'},
+        {label: 'Doctor', value: '03'},
+        {label: 'Surgeon', value: '04'},
+        {label: 'Librarian', value: '05'},
+        {label: 'Human Resource Representative', value: '06'},
+        {label: 'Epidemiologist', value: '07'},
+        {label: 'Electrician', value: '08'},
+        {label: 'Musician', value: '09'},
+        {label: 'Influencer', value: '10'},
+        {label: 'Personal Support Worker', value: '11'},
+        {label: 'Social Work', value: '12'},
+        {label: 'Consultant', value: '13'},
+        {label: 'Still figuring it out', value: '14'},
       ]); 
     const onCareerOpen = useCallback(() => {
         appSetOpen(false);
@@ -152,18 +165,18 @@ const InterestsPage = (props) => {
     const [zodiacOpen, zodiacSetOpen] = useState(false);
     const [zodiacValue, zodiacSetValue] = useState(null);
     const [zodiacItems, zodiacSetItems] = useState([
-        {label: 'Aries', value: 'aries'},
-        {label: 'Taurus', value: 'taurus'},
-        {label: 'Gemini', value: 'gemini'},
-        {label: 'Cancer', value: 'cancer'},
-        {label: 'Leo', value: 'leo'},
-        {label: 'Virgo', value: 'virgo'},
-        {label: 'Libra', value: 'libra'},
-        {label: 'Scorpio', value: 'scorpio'},
-        {label: 'Sagittarius', value: 'sagittarius'},
-        {label: 'Capricorn', value: 'capricorn'},
-        {label: 'Aquarius', value: 'aquarius'},
-        {label: 'Pisces', value: 'pisces'}
+        {label: 'Aries', value: '00'},
+        {label: 'Taurus', value: '01'},
+        {label: 'Gemini', value: '02'},
+        {label: 'Cancer', value: '03'},
+        {label: 'Leo', value: '04'},
+        {label: 'Virgo', value: '05'},
+        {label: 'Libra', value: '06'},
+        {label: 'Scorpio', value: '07'},
+        {label: 'Sagittarius', value: '08'},
+        {label: 'Capricorn', value: '09'},
+        {label: 'Aquarius', value: '10'},
+        {label: 'Pisces', value: '11'}
       ]); 
     const onZodiacOpen = useCallback(() => {
         appSetOpen(false);
@@ -179,17 +192,21 @@ const InterestsPage = (props) => {
     const [appOpen, appSetOpen] = useState(false);
     const [appValue, appSetValue] = useState(null);
     const [appItems, appSetItems] = useState([
-        {label: 'WhatsApp', value: 'whatsapp'},
-        {label: 'Facebook', value: 'facebook'},
-        {label: 'Pinterest', value: 'pinterest'},
-        {label: 'YouTube', value: 'youtube'},
-        {label: 'Instagram', value: 'instagram'},
-        {label: 'Snapchat', value: 'snapchat'},
-        {label: 'Twitter', value: 'twitter'},
-        {label: 'Tumblr', value: 'tumblr'},
-        {label: 'TikTok', value: 'tiktok'},
-        {label: 'Reddit', value: 'reddit'},
-        {label: 'WeChat', value: 'wechat'},
+        {label: 'WhatsApp', value: '00'},
+        {label: 'Facebook', value: '01'},
+        {label: 'Pinterest', value: '02'},
+        {label: 'YouTube', value: '03'},
+        {label: 'Instagram', value: '04'},
+        {label: 'Snapchat', value: '05'},
+        {label: 'Twitter', value: '06'},
+        {label: 'Tumblr', value: '07'},
+        {label: 'TikTok', value: '08'},
+        {label: 'Reddit', value: '09'},
+        {label: 'Discord', value: '10'},
+        {label: 'Tinder', value: '11'},
+        {label: 'LinkedIn', value: '12'},
+        {label: 'Ask.fm', value: '13'},
+        {label: 'Flickr', value: '14'},
       ]); 
     const onAppOpen = useCallback(() => {
         bookSetOpen(false);
@@ -205,17 +222,21 @@ const InterestsPage = (props) => {
     const [bookOpen, bookSetOpen] = useState(false);
     const [bookValue, bookSetValue] = useState(null);
     const [bookItems, bookSetItems] = useState([
-        {label: 'To Kill a Mockingbird', value: 'tokillamockingbird'},
-        {label: 'Pride and Prejudice', value: 'prideandprejudice'},
-        {label: 'Harry Potter series', value: 'harrypotter'},
-        {label: 'Invisible Man', value: 'invisibleman'},
-        {label: 'Percy Jackson series', value: 'percyjackson'},
-        {label: 'No Longer at Ease', value: 'nolongeratease'},
-        {label: 'Things Fall Apart', value: 'thingsfallapart'},
-        {label: 'The Kite Runner', value: 'thekiterunner'},
-        {label: 'A Thousand Splendid Suns', value: 'athousandsplendidsuns'},
-        {label: 'Between the World and Me', value: 'betweentheworldandme'},
-        {label: 'Othello', value: 'othello'},
+        {label: 'To Kill a Mockingbird', value: '00'},
+        {label: 'Pride and Prejudice', value: '01'},
+        {label: 'Harry Potter series', value: '02'},
+        {label: 'Invisible Man', value: '03'},
+        {label: 'Percy Jackson series', value: '04'},
+        {label: 'No Longer at Ease', value: '05'},
+        {label: 'Things Fall Apart', value: '06'},
+        {label: 'The Kite Runner', value: '07'},
+        {label: 'A Thousand Splendid Suns', value: '08'},
+        {label: 'Between the World and Me', value: '09'},
+        {label: 'Catch-22', value: '10'},
+        {label: 'The Great Gatsby', value: '11'},
+        {label: 'Jane Eyre', value: '12'},
+        {label: 'The Catcher in the Rye', value: '13'},
+        {label: 'One Hundred Years of Solitude', value: '14'},
       ]); 
     const onBookOpen = useCallback(() => {
         appSetOpen(false);
@@ -338,7 +359,8 @@ const InterestsPage = (props) => {
                         futurecareerplans: careerValue, 
                         zodiacsign: zodiacValue, 
                         favoriteapp: appValue, 
-                        favoritebook: bookValue
+                        favoritebook: bookValue, 
+                        user_interests_hash: musicValue + movieValue + hobbyValue + destinationValue + careerValue + zodiacValue + appValue + bookValue
                     }).then(() => {
                         console.log(`saved all interests for the user with email ${props.userInfo.email}`);
                     });

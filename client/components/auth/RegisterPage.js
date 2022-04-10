@@ -48,7 +48,8 @@ function RegisterPage(props) {
           futurecareerplans: '', 
           zodiacsign: '', 
           favoriteapp: '', 
-          favoritebook: ''
+          favoritebook: '',
+          user_interests_hash: ''
         };
         const usersRef = firebase.firestore().collection('users')
         usersRef
